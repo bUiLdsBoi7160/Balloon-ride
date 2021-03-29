@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!--
+  Hot-Air-Balloon 3d model.
+
+  Copyright (C) 2006 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <path>Hot-Air-Balloon.ac</path>
+
+ <offsets>
+  <!-- x/y/z == back/right/up -->
+  <x-m> 0.00 </x-m>
+  <y-m> 0.00 </y-m>
+  <z-m> -6.00 </z-m>
+ </offsets>
+
+ <!-- 3d instruments -->
+ <model>
+  <name>Instruments</name>
+  <path>Aircraft/Hot-Air-Balloon/Models/instrument_box.xml</path>
+  <offsets>
+   <x-m>   -0.90 </x-m>
+   <y-m>  -0.00 </y-m>
+   <z-m> 0.80 </z-m>
+   <roll-deg> 00.0 </roll-deg>
+  </offsets>
+ </model>
+
+ <!-- Crew -->
+ <model>
+  <name>Pilot</name>
+  <path>Aircraft/Hot-Air-Balloon/Models/pilot.xml</path>
+  <offsets>
+   <heading-deg>45</heading-deg>
+   <x-m>   -0.50 </x-m>
+   <y-m>   0.00 </y-m>
+   <z-m> 0.00 </z-m>
+  </offsets>
+ </model>
+
+ <animation>
+  <type>select</type>
+  <object-name>Pilot</object-name>
+  <condition>
+   <not>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+   </not>
+  </condition>
+ </animation>
+
+ <!-- Envelope shader -->
+ <effect>
+  <inherits-from>Aircraft/Hot-Air-Balloon/Models/Effects/balloon-envelope</inherits-from>
+  <object-name>envelope</object-name>
+ </effect>
+ <animation>
+  <type>select</type>
+  <object-name>envelope</object-name>
+  <condition>
+   <property>/sim/rendering/shader-effects</property>
+  </condition>
+ </animation>
+
+ <!-- Envelope no-shader animation alternative -->
+ <animation>
+  <type>scale</type>
+  <object-name>envelope_lower</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+  <property>sim/multiplay/generic/float[0]</property>
+  <x-factor>0.0</x-factor>
+  <x-offset>1.0</x-offset>  
+  <y-factor>0.0</y-factor>
+  <y-offset>1.0</y-offset>  
+  <z-factor>1.0</z-factor>
+  <center>
+   <x-m>   0.00 </x-m>
+   <y-m>   0.00 </y-m>
+   <z-m>   0.00 </z-m>
+  </center>
+ </animation>
+ <animation>
+  <type>scale</type>
+  <object-name>envelope_upper</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+  <property>sim/multiplay/generic/float[1]</property>
+  <x-factor>0.0</x-factor>
+  <x-offset>1.0</x-offset>  
+  <y-factor>0.0</y-factor>
+  <y-offset>1.0</y-offset>  
+  <z-factor>1.0</z-factor>
+  <center>
+   <x-m>   0.00 </x-m>
+   <y-m>   0.00 </y-m>
+   <z-m>   0.00 </z-m>
+  </center>
+ </animation>
+ <animation>
+  <type>scale</type>
+  <object-name>envelope_upper</object-name>
+  <object-name>envelope_lower</object-name>
+  <object-name>foot_ropes</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+  <property>sim/multiplay/generic/float[2]</property>
+  <x-factor>1.0</x-factor>
+  <y-factor>1.0</y-factor>
+  <z-factor>0.0</z-factor>
+  <z-offset>1.0</z-offset>
+  <center>
+   <x-m>   0.00 </x-m>
+   <y-m>   0.00 </y-m>
+   <z-m>   0.00 </z-m>
+  </center>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>appendix</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+  <property>sim/multiplay/generic/float[0]</property>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+  <factor>-6.185</factor>
+  <offset-m>6.185</offset-m>  
+ </animation>
+ <animation>
+  <type>scale</type>
+  <object-name>foot_ropes</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+  <property>sim/multiplay/generic/float[0]</property>
+  <x-factor>-0.05</x-factor>
+  <x-offset>1.05</x-offset>  
+  <y-factor>-0.05</y-factor>
+  <y-offset>1.05</y-offset>  
+  <z-factor>-0.3</z-factor>
+  <z-offset>1.3</z-offset>  
+  <center>
+   <x-m>   0.00 </x-m>
+   <y-m>   0.00 </y-m>
+   <z-m> -13.20 </z-m>
+  </center>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>envelope_upper</object-name>
+  <object-name>envelope_lower</object-name>
+  <condition>
+   <not><property>/sim/rendering/shader-effects</property></not>
+  </condition>
+ </animation>
+
+ <!-- LOD for the model as a whole -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>15000</max-m>
+ </animation>
+
+</PropertyList>

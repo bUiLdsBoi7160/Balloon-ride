@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+  ZF Navy free balloon 3d instrument box.
+
+  Copyright (C) 2006 - 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <path>instrument_box.ac</path>
+
+ <offsets>
+  <!-- x/y/z == back/right/up -->  <heading-deg>270</heading-deg>
+  <x-m> 0.0 </x-m>
+  <y-m> 0.0 </y-m>
+  <z-m> 0.0 </z-m>
+ </offsets>
+
+ <!-- 3d instruments -->
+
+ <model>
+  <name>Clock</name>
+  <path>Aircraft/Instruments-3d/clock/clock.xml</path>
+  <offsets>
+   <heading-deg>90</heading-deg>
+   <x-m>  0.1 </x-m>
+   <y-m>  0.0501 </y-m>
+   <z-m>  0.05 </z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>Altimeter</name>
+  <path>Aircraft/Instruments-3d/alt/alt.xml</path>
+  <offsets>
+   <heading-deg>90</heading-deg>
+   <x-m> -0.1 </x-m>
+   <y-m>  0.0501 </y-m>
+   <z-m>  0.05 </z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>VSI</name>
+  <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
+  <offsets>
+   <heading-deg>90</heading-deg>
+   <x-m>  0.0 </x-m>
+   <y-m>  0.0501 </y-m>
+   <z-m>  0.05 </z-m>
+  </offsets>
+ </model>
+
+ <!-- LOD for the model as a whole -->
+<!--
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10000</max-m>
+ </animation>
+-->
+
+</PropertyList>
